@@ -11,22 +11,6 @@ export function ExceptionResponse({ data, status, timestamp }) {
   this.status = status
   this.timestamp = timestamp
 }
-export const validateCaptcha = () => {
-  return new Promise((res) => {
-    window.grecaptcha.ready(function () {
-      window.grecaptcha
-        .execute(process.env.REACT_APP_CAPTCHA_SITE_KEY, {
-          action: 'post',
-        })
-        .then(function (captcha) {
-          return res(captcha)
-        })
-        .catch(function (error) {
-          console.log('Captcha xảy ra lỗi', error)
-        })
-    })
-  })
-}
 
 export const simpleGetRequest = async (url, searchParamStr) => {
   const urlObj = new URL(`${BASE_URL}${url}`)
@@ -57,7 +41,6 @@ export const simpleGetRequest = async (url, searchParamStr) => {
 }
 
 export const simplePostRequest = async (url, data) => {
-  const captcha = await validateCaptcha()
   const response = await fetch(`${BASE_URL}${url}`, {
     method: 'POST',
     headers: {
@@ -66,7 +49,6 @@ export const simplePostRequest = async (url, data) => {
     },
     body: JSON.stringify({
       ...data,
-      captcha,
     }),
   }).then(
     (response) => response,

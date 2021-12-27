@@ -1,0 +1,26 @@
+.loading-root {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  background-color: #ffffff;
+  animation: fade 0.4s ease-in forwards;
+  .progress {
+    display: inline-block;
+    margin-top: 200px;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

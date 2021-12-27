@@ -1,0 +1,37 @@
+.text-field-example {
+  position: relative;
+  input {
+    min-height: 48px;
+    font-size: 14px;
+    box-shadow: unset !important;
+    border-radius: 12px;
+  }
+  label {
+    font-weight: 500;
+    font-size: smaller;
+    text-transform: uppercase;
+    color: #B1B5C3;
+  }
+  .error {
+    // background-image: url("../img/icon-x.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border: 2px solid #E10600
+  }
+  .success {
+    // background-image: url("../img/icon-y.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    border: 2px solid #00B74F
+  }
+  .spinner {
+    position: absolute;
+    width: 20px;
+    right: 10px;
+    top: 0;
+    transform: translateY(200%);
+  }
+}
+
+
+
