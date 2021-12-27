@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes'
 import { toastr } from 'react-redux-toastr'
-import { CustomException, ExceptionResponse } from 'service/api'
+import { CustomException, ExceptionResponse } from 'service/restApi/api'
 
 export const genRequestLoadingAction = () => ({
   type: actionTypes.UPDATE_REQUEST_STATUS,
